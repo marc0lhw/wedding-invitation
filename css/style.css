@@ -71,7 +71,12 @@ footer{padding:20px 0; border-top:1px solid #f1f1f1;  font-size:14px; color:#444
   .bus_detail ul li:nth-child(4){margin-left: 59px; text-indent: -59px; }
  }
 */
-/* 기존 bus_detail과 car_detail 스타일 */
+/* 공통 스타일 수정 - 클릭 가능한 화살표 */
+.arrow-1 {
+  cursor: pointer; /* 클릭이 가능하도록 pointer 추가 */
+}
+
+/* 기존 bus_detail, car_detail, busan_bus_detail */
 .bus_detail, .car_detail, .busan_bus_detail {
   width: 94%;
   margin: 0 auto;
@@ -92,6 +97,7 @@ footer{padding:20px 0; border-top:1px solid #f1f1f1;  font-size:14px; color:#444
   color: #555;
 }
 
+/* span 스타일 */
 .bus_detail ul li span, .car_detail ul li span, .busan_bus_detail ul li span {
   font-weight: 600;
   position: relative;
@@ -100,20 +106,9 @@ footer{padding:20px 0; border-top:1px solid #f1f1f1;  font-size:14px; color:#444
   color: #212121;
 }
 
-/* 두 번째, 세 번째 항목 스타일 */
-.bus_detail ul li:nth-child(2) span,
-.bus_detail ul li:nth-child(3) span,
-.busan_bus_detail ul li:nth-child(2) span,
-.busan_bus_detail ul li:nth-child(3) span {
-  font-weight: 600;
-  padding-right: 0;
-  color: #555;
-}
-
-/* 분리선 스타일 */
-.bus_detail ul li:nth-child(1) span::after, 
-.bus_detail ul li:nth-child(4) span::after,
-.car_detail ul li span::after,
+/* 분리선 */
+.bus_detail ul li span::after, 
+.car_detail ul li span::after, 
 .busan_bus_detail ul li span::after {
   content: "";
   position: absolute;
@@ -124,38 +119,21 @@ footer{padding:20px 0; border-top:1px solid #f1f1f1;  font-size:14px; color:#444
   top: 3px;
 }
 
-/* 마지막 항목 스타일 */
-.bus_detail ul li:last-child, 
-.car_detail ul li:last-child,
-.busan_bus_detail ul li:last-child {
-  margin-bottom: 1rem;
-}
+/* 항목별 스타일 */
+.bus_detail ul li:nth-child(1) { margin-left: 57px; text-indent: -57px; word-break: break-word;}
+.bus_detail ul li:nth-child(2) { margin-left: 57px; text-indent: 0px; word-break: break-word;}
+.bus_detail ul li:nth-child(3) { margin-left: 57px; text-indent: 0px;}
+.bus_detail ul li:nth-child(4) { margin-left: 57px; text-indent: -57px; margin-top: 1rem;}
 
-/* busan_bus 관련 추가 */
-.busan_bus_detail ul li:nth-child(1),
-.busan_bus_detail ul li:nth-child(2),
-.busan_bus_detail ul li:nth-child(3) {
-  margin-left: 57px;
-  text-indent: -57px;
-}
+.car_detail ul li:nth-child(2) { margin-left: 89px; text-indent: -89px;}
+.car_detail ul li:nth-child(3) { margin-left: 89px; text-indent: -89px;}
 
-.busan_bus_detail ul li:nth-child(1) span {
-  letter-spacing: 0.5px;
-}
+.busan_bus_detail ul li:nth-child(1) { margin-left: 57px; text-indent: -57px; word-break: break-word;}
+.busan_bus_detail ul li:nth-child(2) { margin-left: 57px; text-indent: 0px; word-break: break-word;}
+.busan_bus_detail ul li:nth-child(3) { margin-left: 57px; text-indent: 0px;}
+.busan_bus_detail ul li:nth-child(4) { margin-left: 57px; text-indent: -57px; margin-top: 1rem;}
 
-.busan_bus_detail ul li:nth-child(2),
-.busan_bus_detail ul li:nth-child(3) {
-  margin-left: 57px;
-  text-indent: 0px;
-}
-
-.busan_bus_detail ul li:nth-child(4) {
-  margin-left: 57px;
-  text-indent: -57px;
-  margin-top: 1rem;
-}
-
-/* mobile에서의 스타일 변경 */
+/* 모바일 대응 스타일 */
 @supports (-webkit-touch-callout: none) {
   .car_detail ul li:nth-child(2) { margin-left: 96px; text-indent: -96px; }
   .car_detail ul li:nth-child(3) { margin-left: 96px; text-indent: -96px; }
@@ -164,7 +142,6 @@ footer{padding:20px 0; border-top:1px solid #f1f1f1;  font-size:14px; color:#444
   .busan_bus_detail ul li:nth-child(2) { margin-left: 57px; text-indent: 0px; }
   .busan_bus_detail ul li:nth-child(3) { margin-left: 57px; text-indent: 0px; }
 }
-
 
 .gallery p{}
 
