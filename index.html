@@ -167,19 +167,19 @@ $(document).ready(function(){
 		</div>
 		<div class="wow fadeInDown intro_person margin-t-4rem lh-160">
 			<ul>
-				<li><span>이경식 · 노경민의 장남</span>이현우</li>
-				<li><span>김막심 · 박영숙의 장녀</span>김규희</li>
+				<li><span>이경식 라파엘 · 노경민 카타리나의 장남</span>이현우 마르코</li>
+				<li><span>김막심 막시모 · 박영숙 데레사의 장녀</span>김규희 사라</li>
 			</ul>
 		</div>
 		<div class="wow fadeInDown intro_date margin-t-3rem">
 			<ul>
-				<li>2023. 12. 16</li>
+				<li>2025. 5. 31</li>
 				<li>Sat</li>
-				<li>12:00</li>
+				<li>15:00</li>
 			</ul>
 		</div>
 		<div class="wow fadeInDown intro_location margin-t-1rem">
-			<p>진주 제이스퀘어호텔 1관 제우스홀(2층)</p>
+			<p>서울 종로구 북촌로 57 가회동성당</p>
 		</div>
 	</div>
 	<div class="wow fadeInDown margin-t-7rem">
@@ -191,15 +191,39 @@ $(document).ready(function(){
 
 <!---------캘린더--------->
 <section class="padding-3 margin-t-10rem">
-	<!--<div class="wow fadeInDown left " >
-		<img src="images/title_01.png" alt="SAVE our DATE">		
-	</div>-->
-	<div class="wow fadeInDown margin-t-5rem"  >
-		<img src="images/calender.png" alt="">		
-	</div>
-		<p style="" class="wow fadeInDown d-day margin-t-3rem"><span>Jisub and Hyemin Wedding</span> D--104</p>
-	<!--<p style="" class="wow fadeInDown d-day margin-t-5rem">-104 Days until our wedding day</p>-->
+    <div class="wow fadeInDown margin-t-5rem">
+        <img src="images/calender.png" alt="">        
+    </div>
+    <p class="wow fadeInDown d-day margin-t-3rem">
+        <span>Hyunwoo and Gyuhee Wedding</span> D--<span id="d-day-count">60</span>
+    </p>
 </section>
+
+<script>
+    // 결혼식 날짜 설정 (YYYY, MM, DD)
+    const weddingDate = new Date("2025-05-31");  // 예시: 2025년 6월 30일
+
+    function updateDDay() {
+        const today = new Date();  // 오늘 날짜
+        const timeDiff = weddingDate - today;  // 두 날짜 사이의 차이 (밀리초 단위)
+        
+        // 날짜 차이를 일(day) 단위로 변환
+        const daysLeft = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+
+        // D-day 표시 업데이트
+        const dDayElement = document.getElementById("d-day-count");
+        if (dDayElement) {
+            dDayElement.innerText = daysLeft;  // D-day 값을 업데이트
+        }
+    }
+
+    // 페이지 로드 후 D-day 갱신
+    updateDDay();
+
+    // 매일 자동으로 갱신 (24시간 마다)
+    setInterval(updateDDay, 24 * 60 * 60 * 1000);
+</script>
+
 
 
 <!---------갤러리--------->
@@ -256,8 +280,8 @@ $(document).ready(function(){
 		<img src="images/title_03.png" alt="LOCATION">		
 	</div>
 	<div class="wow fadeInDown margin-t-3rem">
-		<p >JSQUARE HOTEL</p>
-		<p class="margin-t-1rem lh-160 padding-1rem">경남 진주시 솔밭로 107</br>진주 제이스퀘어호텔 1관 제우스홀(2층)</p>
+		<p >가회동 성당</p>
+		<p class="margin-t-1rem lh-160 padding-1rem">서울 종로구 북촌로 57</br></p>
 	</div>
 	<div id="map" style="width:100%;height:300px;" class="wow fadeInDown map margin-t-3rem">
 		<img src="images/map.png" alt="결혼식장 위치" style="width: 100%; max-width: 600px;">
@@ -287,54 +311,30 @@ $(document).ready(function(){
 		<p id="bus_button" class="bus_button fw-6">교통수단 이용시<i id="bus_arrow" class="arrow-1" title="arrow icon"></i></p>
 		<div class="bus_detail center padding-1rem">
 			<ul>
-				<li><span>버스</span>시외버스, 고속버스 터미널</li>
-				<li>택시 승차 시 10분 이내</li>
-				<li>버스 승차 시 진주시청에서 하차 후 걸어서 3분 이내</li>
+				<li><span>지하철</span>3호선 안국역 2번 출구 도보 9분, 고속버스 터미널</li>
+				<li>종로 02번 마을버스 '북촌한옥마을입구 정세권활동' 정류장에서 하차</li>
+				<li><span>버스</span>'창덕궁 우리소리박물관' 또는 '안국역 인사동' 정류장 하차</li>
+				<li>도보 12분 또는 안국역 2번 출구에서 종로 02번 마을버스</li>
+				<li>간선(파랑) : 109, 151, 162, 171, 172, 272, 710</li>
+				<li>지선(초록) : 7025</li>
 			</ul>
 		</div>
 		<p id="car_button" class="car_button margin-t-1rem fw-6">자가용 이용시<i id="car_arrow" class="arrow-1" title="arrow icon"></i></p>
 		<div class="car_detail center padding-1rem">
 			<ul>
-				<li><span>네비게이션</span>"제이스퀘어호텔"</li>
-				<li><span>주&nbsp;소&nbsp;검&nbsp;색</span>"경남 진주시 솔밭로 107" 또는 "상대동  297-7"</li>
-				<li><span>주&nbsp;차&nbsp;안&nbsp;내</span>호텔 지하주차장 1, 2, 3층 (150대)<br />호텔 옆 지상 주차타워(총 500대 주차가능)<br />주차 안내 요원이 주차 안내 해드립니다.</li>
+				<li>성당 내 주차는 불가하여 가급적 대중교통을 이용하여 주시기 바랍니다.</li>
+				<li>현대 계동사옥 주차 시 축의대에 말씀 부탁드립니다.</li>
 			</ul>
 		</div>
-		
+		<p id="car_button" class="car_button margin-t-1rem fw-6">부산버스 이용시<i id="car_arrow" class="arrow-1" title="arrow icon"></i></p>
+		<div class="car_detail center padding-1rem">
+			<ul>
+				<li><span>출발</span>오전 8시30분 송도힐스테이트 이진베이시티 A동 입구</li>
+				<li><span>경유</span>오전 9시 구서IC 만남의광장 입구</li>
+			</ul>
+		</div>
 	</div>
 </section>
-
-
-
-<!--------공지사항-------
-
-
-<!--
-<section class="margin-t-10rem">
-	<div class="wow fadeInDown"  class="">
-		<img src="images/title_05.png" alt="Notice">		
-	</div>
-	<div class="notice_txt padding-1rem">
-		<p class="wow fadeInDown margin-t-3rem ">신랑측 피로연 안내</p>
-		<ul class="wow fadeInDown">
-			<li>그러소광양불고기</li>
-			<li>(전남 광양시 광양읍 매천로 714 그러소)</li>
-			<li>10월 15일 일요일 오후 12시~3시</li>
-		</ul>
-
-		<p class="wow fadeInDown margin-t-3rem ">대절 버스 안내</p>
-		<ul class="wow fadeInDown">
-			<li>광양밝은약국 앞(구 로타리 국민은행 앞)</li>
-			<li>전남 광양시 광양읍 숲샘길 129</li>
-		</ul>
-		<span class="margin-t-1rem wow fadeInDown">※ 오전 11시 출발합니다.</span>
-	</div>
-</section>-->
-
-
-
-
-
 
 <!--------마음전하실곳--------->
 
@@ -373,7 +373,7 @@ $(document).ready(function(){
 -->
 
 <footer class="center margin-t-2rem">
-	POYSD © All Right Reserved
+	현우❤규희 부부 제작
 </footer>
 
 
