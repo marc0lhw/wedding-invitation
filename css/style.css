@@ -81,17 +81,17 @@ footer{padding:20px 0; border-top:1px solid #f1f1f1;  font-size:14px; color:#444
 .bus_detail ul li:last-child, .car_detail ul li:last-child, .busan_bus_detail ul li:last-child{margin-bottom:1rem; }
 
 
-.bus_detail ul li:nth-child(1){margin-left: 57px; text-indent: -65px; word-break: break-word;}
+.bus_detail ul li:nth-child(1){margin-left: 57px; text-indent: -70px; word-break: break-word;}
 .bus_detail ul li:nth-child(1) span {letter-spacing: 0.5px;}
-.bus_detail ul li:nth-child(2){margin-left: 57px; word-break: break-word;}
-.bus_detail ul li:nth-child(3){margin-left: 57px; text-indent: -60px; margin-top: 1rem; word-break: break-word;}
+.bus_detail ul li:nth-child(2){margin-left: 65px; word-break: break-word;}
+.bus_detail ul li:nth-child(3){margin-left: 57px; text-indent: -57px; margin-top: 1rem; word-break: break-word;}
 .bus_detail ul li:nth-child(3) span {letter-spacing: 0.5px;}
-.bus_detail ul li:nth-child(4){margin-left: 57px; word-break: break-word;}
-.bus_detail ul li:nth-child(5){margin-left: 57px; word-break: break-word;}
-.bus_detail ul li:nth-child(6){margin-left: 57px; word-break: break-word;}
+.bus_detail ul li:nth-child(4){margin-left: 65px; word-break: break-word;}
+.bus_detail ul li:nth-child(5){margin-left: 65px; word-break: break-word;}
+.bus_detail ul li:nth-child(6){margin-left: 65px; word-break: break-word;}
 
-.car_detail ul li:nth-child(1){margin-left: 25px; word-break: break-word;}
-.car_detail ul li:nth-child(2){margin-left: 25px; word-break: break-word;}
+.car_detail ul li:nth-child(1){margin-left: 10px; word-break: break-word;}
+.car_detail ul li:nth-child(2){margin-left: 10px; word-break: break-word;}
 
 /* @supports (-webkit-touch-callout: none)  {
   .car_detail ul li:nth-child(2){margin-left: 96px; text-indent: -96px;}
