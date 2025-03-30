@@ -84,7 +84,7 @@ footer{padding:20px 0; border-top:1px solid #f1f1f1;  font-size:14px; color:#444
 .bus_detail ul li:nth-child(1){margin-left: 57px; text-indent: -70px; word-break: break-word;}
 .bus_detail ul li:nth-child(1) span {letter-spacing: 0.5px;}
 .bus_detail ul li:nth-child(2){margin-left: 65px; word-break: break-word;}
-.bus_detail ul li:nth-child(3){margin-left: 57px; text-indent: -57px; margin-top: 1rem; word-break: break-word;}
+.bus_detail ul li:nth-child(3){margin-left: 65px; text-indent: -57px; margin-top: 1rem; word-break: break-word;}
 .bus_detail ul li:nth-child(3) span {letter-spacing: 0.5px;}
 .bus_detail ul li:nth-child(4){margin-left: 65px; word-break: break-word;}
 .bus_detail ul li:nth-child(5){margin-left: 65px; word-break: break-word;}
