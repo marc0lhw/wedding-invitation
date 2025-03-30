@@ -76,6 +76,12 @@ $(document).ready(function(){
 		$("#car_arrow").toggleClass("arrow-1");
 		$("#car_arrow").toggleClass("arrow-2");
 	});
+	
+	$('#busan_bus_button').off('click').on('click', function(){
+		$(".busan_bus_detail").slideToggle("fast");
+		$("#busan_bus_arrow").toggleClass("arrow-1");
+		$("#busan_bus_arrow").toggleClass("arrow-2");
+	});
 
 	$('#heart_button-1').off('click').on('click', function(){
 		$(".heart_detail-1").slideToggle("fast");
@@ -141,7 +147,7 @@ $(document).ready(function(){
 	<div class=" margin-t-3rem intro-1"  >
 		<ul>
 			<li class="wow fadeInLeft"  data-wow-delay="1.5s"><img src="images/photo_intro_01.jpg" alt="" class=""></li>
-			<li class="wow fadeInRight" data-wow-delay="2s"><img src="images/photo_intro_txt_01.png" alt="" style="margin-left: 40px; width: 120%; height: auto;"></li>
+			<li class="wow fadeInRight" data-wow-delay="2s"><img src="images/photo_intro_txt_01.png" alt="" style="left: 20px; width: 120%; height: auto;"></li>
 		</ul>
 	</div>
 	<div class="wow fadeInDown margin-t-3rem intro-2">
@@ -315,8 +321,8 @@ $(document).ready(function(){
 		<div class="bus_detail center padding-1rem">
 			<ul>
 				<li><span>지하철</span>3호선 안국역 2번 출구 도보 9분</li>
-				<li>종로 02번 마을버스 '북촌한옥마을입구 정세권활동' 정류장에서 하차</li>
-				<li><span>버스</span>'창덕궁 우리소리박물관' 또는 '안국역 인사동' 정류장 하차</li>
+				<li>종로 02번 마을버스 '북촌한옥마을입구·정세권활동' 정류장에서 하차</li>
+				<li><span>버스</span>'창덕궁·우리소리박물관' 또는 '안국역·인사동' 정류장 하차</li>
 				<li>도보 12분 또는 안국역 2번 출구에서 종로 02번 마을버스</li>
 				<li>간선(파랑) : 109, 151, 162, 171, 172, 272, 710</li>
 				<li>지선(초록) : 7025</li>
