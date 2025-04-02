@@ -51,7 +51,7 @@
 	<script>
 		new WOW().init();
 	</script>
-<!--	<script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=86qfy4ys6f"></script>-->
+	<script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpKeyId=5wmcazsc39"></script>
 	<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 	<script src="cs/clipboard.min.js"></script>
 	
@@ -296,29 +296,38 @@ $(document).ready(function(){
 		<p >가회동 성당</p>
 		<p class="margin-t-1rem lh-160 padding-1rem">서울 종로구 북촌로 57</br></p>
 	</div>
-	<div id="map" style="display: inline-block; text-align: center;" class="wow fadeInDown map margin-t-3rem">
-		<img src="images/map.png" alt="결혼식장 위치" style="width: 100%; max-width: 600px;">
+	<div id="map" style="width: 100%; height: 400px;" class="wow fadeInDown map margin-t-3rem">
 	</div> 
 
-
-	
-
-<!--
 	<script>
 	var mapOptions = {
-		center: new naver.maps.LatLng(35.178627, 128.106809),
-		zoom: 17
+		center: new naver.maps.LatLng(37.58203844570275, 126.98476427995448), // 가회동 성당 좌표 (위도, 경도)		
+		zoom: 16
 	};
 
 	var map = new naver.maps.Map('map', mapOptions);
 
 	var marker = new naver.maps.Marker({
-    position: new naver.maps.LatLng(35.178627, 128.106809),
-    map: map
-	}); 
+		position: new naver.maps.LatLng(37.58203844570275, 126.98476427995448), 
+		map: map
+	});
+	
+	setTimeout(function () {
+	    var mapElement = document.getElementById("map");
+	    var mapWidth = mapElement.offsetWidth;
+	    var mapHeight = mapElement.offsetHeight;
+
+	    map.setSize(new naver.maps.Size(mapWidth, mapHeight));
+	}, 100);
+
+	setTimeout(function () {
+	    map.setCenter(new naver.maps.LatLng(37.58203844570275, 126.98476427995448)); // 원하는 좌표로 다시 설정
+	    marker.setPosition(new naver.maps.LatLng(37.58203844570275, 126.98476427995448)); // 마커 위치도 다시 설정
+	}, 500);
+
+
 
 	</script>
-	-->
 
 	<div class="wow fadeInDown margin-t-3rem">
 		<p id="bus_button" class="bus_button fw-6">교통수단 이용시<i id="bus_arrow" class="arrow-1" title="arrow icon"></i></p>
