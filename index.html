@@ -12,7 +12,7 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<meta http-equiv="cleartype" content="on">
 	<title>현우&규희 결혼합니다.</title>
-	<meta property="og:image" content="images/Thumbnail.jpg">
+	<meta property="og:image" content="images/Thumbnail.png">
 	<meta property="og:title" content="현우&규희 결혼합니다.">
 	<meta property="og:description" content="2025년 5월 31일, 서울 가회동 성당">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0, user-scalable=no ">
@@ -258,6 +258,14 @@ $(document).ready(function(){
 		<div class="swiper-slide"><img src="images/Photo_11.jpg" alt="Wedding images"></div>
 		<div class="swiper-slide"><img src="images/Photo_12.jpg" alt="Wedding images"></div>
 		<div class="swiper-slide"><img src="images/Photo_13.jpg" alt="Wedding images"></div>
+		<div class="swiper-slide"><img src="images/Photo_14.jpg" alt="Wedding images"></div>
+		<div class="swiper-slide"><img src="images/Photo_15.jpg" alt="Wedding images"></div>
+		<div class="swiper-slide"><img src="images/Photo_16.jpg" alt="Wedding images"></div>
+		<div class="swiper-slide"><img src="images/Photo_17.jpg" alt="Wedding images"></div>
+		<div class="swiper-slide"><img src="images/Photo_18.jpg" alt="Wedding images"></div>
+		<div class="swiper-slide"><img src="images/Photo_19.jpg" alt="Wedding images"></div>
+		<div class="swiper-slide"><img src="images/Photo_20.jpg" alt="Wedding images"></div>
+		<div class="swiper-slide"><img src="images/Photo_21.jpg" alt="Wedding images"></div>
       </div>
       <div class="swiper-pagination"></div>
     </div>
@@ -294,13 +302,13 @@ $(document).ready(function(){
 		<p >가회동 성당</p>
 		<p class="margin-t-1rem lh-160 padding-1rem">서울 종로구 북촌로 57</br></p>
 	</div>
-	<div id="map" style="width: 90%; height: 400px; margin: 2rem auto 0;" class="wow fadeInDown map margin-t-3rem">
+	<div id="map" style="width: 80%; height: 80%; margin: 2rem auto 0;" class="wow fadeInDown map margin-t-3rem">
 	</div> 
 
 	<script>
 	var mapOptions = {
 		center: new naver.maps.LatLng(37.58203844570275, 126.98476427995448), // 가회동 성당 좌표 (위도, 경도)		
-		zoom: 15
+		zoom: 14
 	};
 
 	var map = new naver.maps.Map('map', mapOptions);
@@ -379,12 +387,31 @@ $(document).ready(function(){
 	<div class=" heart_detail-2 center padding-1rem">
 		<ul>
 			<li class=""><span>신부 김규희</span>하나 391-910882-56507<button id="acount-4" data-clipboard-text="012345123456">Copy</button></li>
-			<li><span>혼주 김막심</span>카카오 3333-01-012345<button id="acount-5" data-clipboard-text="333301012345">Copy</button></li>
-			<li><span>혼주 박영숙</span>카카오 3333-03-012345<button id="acount-6" data-clipboard-text="333303012345">Copy</button></li>
+			<li><span>혼주 김막심</span>국민 668-21-0002-013<button id="acount-5" data-clipboard-text="333301012345">Copy</button></li>
+			<li><span>혼주 박영숙</span>부산 052-12-035951-0<button id="acount-6" data-clipboard-text="333303012345">Copy</button></li>
 		</ul>
 	</div>
 </section>
 
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+		// 모든 버튼을 가져옴
+		const copyButtons = document.querySelectorAll("button[id^='acount-']");
+	
+		copyButtons.forEach(button => {
+			button.addEventListener("click", function () {
+				const textToCopy = this.getAttribute("data-clipboard-text");
+	
+				// 클립보드에 복사
+				navigator.clipboard.writeText(textToCopy).then(() => {
+					alert("계좌번호가 복사되었습니다: " + textToCopy);
+				}).catch(err => {
+					console.error("복사 실패: ", err);
+				});
+			});
+		});
+	});
+	</script>
 
 
 <!--
@@ -395,7 +422,7 @@ $(document).ready(function(){
 </section>
 -->
 
-<footer class="center margin-t-2rem">
+<footer class="center margin-t-6rem">
 	현우❤규희 부부 제작
 </footer>
 
@@ -405,24 +432,6 @@ $(document).ready(function(){
 </html>
 
 
-
-<!-- 
-<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
-<script type='text/javascript'>
-    //<![CDATA[
-    // // 사용할 앱의 JavaScript 키를 설정해 주세요.
-//    Kakao.init('49ad90f7832f7f089ec88e6c8724dd73');
-    // // 카카오링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
-    Kakao.Link.createScrapButton({
-        container: '#kakao-link-btn',
-        requestUrl: 'http://poysd.com/',
-        templateId : 100094
-    });
-    //]]>
-</script> 
--->
-
-
 <script>
 $(document).ready(function(){
 
@@ -430,120 +439,6 @@ $(document).ready(function(){
 	$('html').removeClass('no-js');
 
 
-	/*댓글 글자수 제한*/
-	$('.guestbook_message textarea').keyup(function(){
-	  var content = $(this).val();
-	  $('.guestbook_message .guestbook_count span').html(content.length);
-	  if (content.length > 100){
-		alert("최대 100자까지 입력 가능합니다.");
-		$(this).val(content.substring(0, 100));
-		$('.guestbook_message .guestbook_count span').html(100);
-	  }
-	});
-
-
-	/*댓글 저장*/
-	$('#submit').click(function(){   //submit 버튼을 클릭하였을 때
-
-		//입력 항목을 체크하고
-		if($("input[name='name']").val() == ""){
-			alert("이름을 입력해주세요");
-			$("input[name='name']").focus();
-			return false;		
-		}
-
-		if($("input[name='pass']").val() == ""){
-			alert("패스워드를 입력해주세요");
-			$("input[name='pass']").focus();
-			return false;		
-		}
-
-		if($("textarea[name='content']").val() == ""){
-			alert("내용을 입력해주세요");
-			$("textarea[name='content']").focus();
-			return false;		
-		}
-
-		var formData = $("#WriteForm").serialize();   //폼의 이름 값을 변수 안에 담아줌
-
-		$.ajax({
-            cache : false,
-			type:'POST',   //post 방식으로 전송
-			url:'ajax_reply_save.php',   //데이터를 주고받을 파일 주소
-			data:formData,   //위의 변수에 담긴 데이터를 전송해준다.
-			//dataType:'html',   //html 파일 형식으로 값을 담아온다.
-			success : function(data){   //파일 주고받기가 성공했을 경우. data 변수 안에 값을 담아온다.
-				var jsonObj = JSON.parse(data);
-				console.log(jsonObj);
-
-				if(jsonObj.success == 'true'){	//성공했다면
-					alert('소중한 마음 남겨주셔서 감사합니다.');
-					$("#qna_box").load(location.href+" #qna_box");
-					document.getElementById("name").value = "";
-					document.getElementById("pass").value = "";
-					document.getElementById("content").value = "";
-				}else if(jsonObj.success == 'stop'){	//15초 내에 또 썼다면
-					alert('15초 후 다시 등록해주세요.');
-				}else	{	//실패했다면
-					alert('마음 남기기를 실패했어요. 다시 확인해주세요.');
-				}
-			}
-		});
-	});
-
-
-
-	/*팝업 띄우고*/
-	$(document).on("click", ".bdivpop5", function(event){
-	   layerTop=(($(window).height()-$("#divpop5").outerHeight())/3+$(window).scrollTop())+"px";
-		layerLeft=(($(window).width()-$("#divpop5").outerWidth())/2+$(window).scrollLeft())+"px";
-		$('#divpop5').css('top',layerTop).css('left',layerLeft);
-		inurl ="reply_delete.php?seq="+$(this).attr("seq");
-		$(".divpop5Html").load(inurl);
-		document.all['divpop5'].style.visibility = "visible";
-	});
-
-	/*팝업 닫고*/
-    //..는 reply_delete.php안에 넣어둠!
-
-	/*댓글 삭제*/
-	//..는 reply_delete.php안에 넣어둠!
-		
 });
 </script>
 
-
-
-<!--댓글 리스트 분리-->
-<script type="text/javascript">
-$(function(){
-	var count = 0;
-	$('div').on('click', '.more', function() {
-
-		var ID = $(this).attr("id");
-		count = count + 5;
-		var yogi = document.getElementById("yogi");
-
-		//alert(ID);
-		if(ID != 1)
-		{
-			//$("#more"+ID).html('<img src="moreajax.gif" />');
-
-			$.ajax({
-				type: "POST",
-				url: "ajax_reply_more.php",
-				data: {lastmsg : ID, count: count},
-				cache: false,
-				success: function(html){
-					$(yogi).append(html);
-					$("#more"+ID).remove(); // removing old more button
-				}
-			});
-		}else{
-			$(".morebox").remove();// no results
-		}
-
-		return false;
-	});
-});
-</script>
