@@ -189,19 +189,62 @@ $(document).ready(function(){
 			<img src="images/caly.png" class="">	
 		</div>
 	</div>
-	<div class="wow fadeInDown margin-t-7rem">
-		<img src="images/gif_main3.gif" class="" alt="Main GIF" >	
-	</div>
-	<div class="wow fadeInDown margin-t-7rem">
+	<!-- <div class="wow fadeInDown margin-t-7rem">
 		<img src="images/gif_main2.gif" class="" alt="Main GIF" >	
 	</div>
+	<div class="wow fadeInDown margin-t-7rem">
+		<img src="images/gif_main3.gif" class="" alt="Main GIF" >	
+	</div> -->
+	
+	<div class="wow fadeInDown margin-t-7rem">
+		<video autoplay loop muted playsinline style="width: 100%; height: auto;">
+			<source src="video/sample_1.mp4" type="video/mp4">
+		</video>
+	</div>
+	<div class="wow fadeInDown margin-t-7rem">
+		<video autoplay loop muted playsinline style="width: 100%; height: auto;">
+			<source src="video/sample_2.mp4" type="video/mp4">
+		</video>	
+	</div>
+
 	
 </section>
+
+<!---------스냅영상버튼--------->
+<section class="padding-3">
+    <div class="wow fadeInDown margin-t-5rem">
+        <img src="images/title_01.png" alt="">        
+    </div>
+</section>
+
+
+<style>
+	.video-container {
+		display: flex;
+		justify-content: center;
+		gap: 20px;
+		margin-top: 20px;
+	}
+	.video-button {
+		width: 120px; /* 원하는 크기로 조절 */
+		height: auto; /* 비율 유지 */
+		cursor: pointer;
+	}
+</style>
+
+<div class="video-container">
+	<a href="https://www.youtube.com/watch?v=영상ID1" target="_blank">
+		<img src="images/video_button_1.png" alt="영상 1 보러가기" class="video-button">
+	</a>
+	<a href="https://www.youtube.com/watch?v=영상ID2" target="_blank">
+		<img src="images/video_button_2.png" alt="영상 2 보러가기" class="video-button">
+	</a>
+</div>
 
 
 
 <!---------캘린더--------->
-<section class="padding-3 margin-t-10rem">
+<section class="padding-3 margin-t-5rem">
     <div class="wow fadeInDown margin-t-5rem">
         <img src="images/calender.png" alt="">        
     </div>
