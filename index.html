@@ -34,6 +34,7 @@
 	 <link rel="apple-touch-icon" href="images/favi/apple-touch-icon-57x57.png"> 
 	 <!-- Fallback for everything else --> 
 	 <link rel="shortcut icon" href="images/favi/apple-touch-icon.png"> 
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 	 
 	 <!-- Tile icon for Win8 (144x144 + tile color) --> 
 	 <meta name="msapplication-TileImage" content="images/favi/apple-touch-icon-144x144.png">
@@ -64,6 +65,12 @@
 $(document).ready(function(){
 
     /*화살표*/
+	$('#tel_button').off('click').on('click', function(){
+		$(".tel_detail").slideToggle("fast");
+		$("#tel_arrow").toggleClass("arrow-1");
+		$("#tel_arrow").toggleClass("arrow-2");
+	});
+
 	$('#bus_button').off('click').on('click', function(){
 		$(".bus_detail").slideToggle("fast");
 		$("#bus_arrow").toggleClass("arrow-1");
@@ -156,6 +163,58 @@ $(document).ready(function(){
 	<div class="wow fadeInDown margin-t-7rem">
 		<img src="images/gif_main3.gif" class="" alt="Main GIF" >	
 	</div> -->
+
+	<!-- 연락하기 -->
+	<div class="wow fadeInDown margin-t-3rem">
+		<p id="tel_button" class="tel_button margin-t-1rem fw-6">연락하기<i id="tel_arrow" class="arrow-1" title="arrow icon"></i></p>
+		<div class="tel_detail center padding-1rem">
+			<ul>
+				<li>
+					<span class="tel tel-name-short">신랑</span>이현우
+					<span class="cell">
+						<a href="tel:01066453285"><i class="fa fa-phone-alt"></i></a>
+						<a href="sms:01066453285"><i class="fa fa-envelope"></i></a>
+					</span>
+				</li>
+				<li>
+					<span class="tel">신랑 아버지</span>이경식
+					<span class="cell">
+						<a href="tel:01066253285"><i class="fa fa-phone-alt"></i></a>
+						<a href="sms:01066253285"><i class="fa fa-envelope"></i></a>
+					</span>
+				</li>
+				<li>
+					<span class="tel">신랑 어머니</span>노경민
+					<span class="cell">
+						<a href="tel:01066523285"><i class="fa fa-phone-alt"></i></a>
+						<a href="sms:01066523285"><i class="fa fa-envelope"></i></a>
+					</span>
+				</li>
+				<li>
+					<span class="tel tel-name-short">신부</span>김규희
+					<span class="cell">
+						<a href="tel:01029785370"><i class="fa fa-phone-alt"></i></a>
+						<a href="sms:01029785370"><i class="fa fa-envelope"></i></a>
+					</span>
+				</li>
+				<li>
+					<span class="tel">신부 아버지</span>김막심
+					<span class="cell">
+						<a href="tel:01035954455"><i class="fa fa-phone-alt"></i></a>
+						<a href="sms:01035954455"><i class="fa fa-envelope"></i></a>
+					</span>
+				</li>
+				<li>
+					<span class="tel">신부 어머니</span>박영숙
+					<span class="cell">
+						<a href="tel:01054365370"><i class="fa fa-phone-alt"></i></a>
+						<a href="sms:01054365370"><i class="fa fa-envelope"></i></a>
+					</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+
 	
 	<div class="wow fadeInDown margin-t-7rem">
 		<video autoplay loop muted playsinline style="width: 100%; height: auto;">
