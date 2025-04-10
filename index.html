@@ -12,6 +12,10 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 	<meta http-equiv="cleartype" content="on">
 	<title>현우&규희 결혼합니다.</title>
+
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://marco-sarah-wedding-invitation.store/" />
+
 	<meta property="og:image" content="images/Thumbnail.png">
 	<meta property="og:title" content="현우&규희 결혼합니다.">
 	<meta property="og:description" content="2025년 5월 31일 15시, 서울 가회동 성당">
@@ -55,6 +59,35 @@
 	<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 	<script src="cs/clipboard.min.js"></script>
 	
+	<!-- 카카오 SDK 불러오기 -->
+	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+	<script>
+		Kakao.init('2f33e125ff77ca7e0d3d247b75327b55'); // 앱키 붙여넣기
+
+		function sendKakaoLink() {
+			Kakao.Link.sendDefault({
+			objectType: 'feed',
+			content: {
+				title: '현우&규희 결혼합니다.',
+				description: '2025년 5월 31일 15시, 서울 가회동 성당',
+				imageUrl: 'https://marco-sarah-wedding-invitation.store/images/Thumbnail2.png',
+				link: {
+				mobileWebUrl: 'https://marco-sarah-wedding-invitation.store',
+				webUrl: 'https://marco-sarah-wedding-invitation.store'
+				}
+			},
+			buttons: [
+				{
+				title: '청첩장 보기',
+				link: {
+					mobileWebUrl: 'https://marco-sarah-wedding-invitation.store',
+					webUrl: 'https://marco-sarah-wedding-invitation.store'
+				}
+				}
+			]
+			});
+		}
+	</script>
     
 </head>
 
@@ -166,7 +199,14 @@ $(document).ready(function(){
 
 	<!-- 연락하기 -->
 	<div class="wow fadeInDown margin-t-3rem">
-		<p id="tel_button" class="tel_button margin-t-1rem fw-6">연락하기<i id="tel_arrow" class="arrow-1" title="arrow icon"></i></p>
+		
+		<!-- <p id="tel_button" class="tel_button margin-t-1rem fw-6">연락하기<i id="tel_arrow" class="arrow-1" title="arrow icon"></i></p> -->
+		<img
+			src="images/tel_button.png"
+			alt="연락하기 버튼"
+			style="width: 35%; max-width: 300px; cursor: pointer;"
+			onclick="toggleTelDetail()"
+		/>
 		<div class="tel_detail center padding-1rem">
 			<ul>
 				<li>
@@ -214,7 +254,7 @@ $(document).ready(function(){
 			</ul>
 		</div>
 	</div>
-
+	  
 	
 	<div class="wow fadeInDown margin-t-7rem">
 		<video autoplay loop muted playsinline style="width: 100%; height: auto;">
@@ -229,6 +269,14 @@ $(document).ready(function(){
 
 	
 </section>
+
+<script>
+	function toggleTelDetail() {
+	  const telDetail = document.querySelector('.tel_detail');
+	  telDetail.classList.toggle('open');
+	}
+  </script>
+  
 
 <!---------스냅영상버튼--------->
 <section class="padding-3">
@@ -493,13 +541,17 @@ $(document).ready(function(){
 	</script>
 	
 
-<!--
+
 <section class="margin-t-10rem padding-3">
 	<div id="">
-		<p id="" class="kakao-link-btn">카카오톡 링크 공유하기</p>
+		<p id="" class="kakao-link-btn" onclick="sendKakaoLink()">카카오톡 링크 공유하기</p>
 	</div>
 </section>
--->
+
+<!-- 
+<section class="margin-t-10rem padding-3">
+	<button onclick="sendKakaoLink()">카카오톡으로 공유</button>
+</section> -->
 
 <footer class="center margin-t-6rem">
 	현우❤규희 부부 제작

@@ -72,6 +72,15 @@ footer{padding:20px 0; border-top:1px solid #f1f1f1;  font-size:14px; color:#444
  }
 */
 
+.tel_detail {
+  display: none;
+  transition: all 0.3s ease;
+}
+
+.tel_detail.open {
+  display: block;
+}
+
 .bus_detail, .car_detail, .busan_bus_detail, .tel_detail{ width:94%; margin:0 auto; margin-top:1rem; display:none;   }
 .bus_detail ul, .car_detail ul, .busan_bus_detail ul, .tel_detail ul{display:inline-block; text-align:left;}
 .tel_detail ul{margin-left:40px; display:inline-block; text-align:center;}
