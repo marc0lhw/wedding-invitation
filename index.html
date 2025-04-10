@@ -74,16 +74,16 @@
 				imageWidth: 200,
 				imageHeight: 300,
 				link: {
-				mobileWebUrl: 'https://marco-sarah-wedding-invitation.store',
-				webUrl: 'https://marco-sarah-wedding-invitation.store'
+				mobileWebUrl: 'https://marco-sarah-wedding-invitation.store?parameter=false',
+				webUrl: 'https://marco-sarah-wedding-invitation.store?parameter=false'
 				}
 			},
 			buttons: [
 				{
 				title: '청첩장 보기',
 				link: {
-					mobileWebUrl: 'https://marco-sarah-wedding-invitation.store',
-					webUrl: 'https://marco-sarah-wedding-invitation.store'
+					mobileWebUrl: 'https://marco-sarah-wedding-invitation.store?parameter=false',
+					webUrl: 'https://marco-sarah-wedding-invitation.store?parameter=false'
 				}
 				}
 			]
@@ -480,10 +480,23 @@ $(document).ready(function(){
 	</div>
 </section>
 
+<script>
+	document.addEventListener("DOMContentLoaded", function () {
+	  const params = new URLSearchParams(window.location.search);
+	  const showBusanBus = params.get("parameter");
+  
+	  if (showBusanBus === "false") {
+		const busanButton = document.getElementById("busan_bus_button");
+		const busanDetail = document.querySelector(".busan_bus_detail");
+  
+		if (busanButton) busanButton.style.display = "none";
+		if (busanDetail) busanDetail.style.display = "none";
+	  }
+	});
+  </script>
+
+
 <!--------마음전하실곳--------->
-
-
-
 <section class="margin-t-10rem">
 	<div class="wow fadeInDown"  class="">
 		<img src="images/title_06.png" alt="Thank you for giving your heart.">		
