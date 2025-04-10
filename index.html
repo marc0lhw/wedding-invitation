@@ -63,33 +63,42 @@
 	<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 	<script>
 		Kakao.init('2f33e125ff77ca7e0d3d247b75327b55'); // 앱키 붙여넣기
-
+	
 		function sendKakaoLink() {
+			// 현재 URL에서 parameter 값 가져오기
+			const params = new URLSearchParams(window.location.search);
+			const isBusanHidden = params.get("parameter") === "false";
+	
+			// 공유할 링크 구성
+			const baseUrl = 'https://marco-sarah-wedding-invitation.store';
+			const shareUrl = isBusanHidden ? `${baseUrl}?parameter=false` : baseUrl;
+	
 			Kakao.Link.sendDefault({
-			objectType: 'feed',
-			content: {
-				title: '현우&규희 결혼합니다.',
-				description: '2025년 5월 31일 15시, 서울 가회동 성당',
-				imageUrl: 'https://marco-sarah-wedding-invitation.store/images/Thumbnail2.png',
-				imageWidth: 200,
-				imageHeight: 300,
-				link: {
-				mobileWebUrl: 'https://marco-sarah-wedding-invitation.store?parameter=false',
-				webUrl: 'https://marco-sarah-wedding-invitation.store?parameter=false'
-				}
-			},
-			buttons: [
-				{
-				title: '청첩장 보기',
-				link: {
-					mobileWebUrl: 'https://marco-sarah-wedding-invitation.store?parameter=false',
-					webUrl: 'https://marco-sarah-wedding-invitation.store?parameter=false'
-				}
-				}
-			]
+				objectType: 'feed',
+				content: {
+					title: '현우&규희 결혼합니다.',
+					description: '2025년 5월 31일 15시, 서울 가회동 성당',
+					imageUrl: 'https://marco-sarah-wedding-invitation.store/images/Thumbnail2.png',
+					imageWidth: 200,
+					imageHeight: 300,
+					link: {
+						mobileWebUrl: shareUrl,
+						webUrl: shareUrl
+					}
+				},
+				buttons: [
+					{
+						title: '청첩장 보기',
+						link: {
+							mobileWebUrl: shareUrl,
+							webUrl: shareUrl
+						}
+					}
+				]
 			});
 		}
 	</script>
+	
     
 </head>
 
